@@ -21,7 +21,8 @@ def _load_artifacts():
     with open(max_len_path, "rb") as f:
         max_len = pickle.load(f)
 
-    model = load_model(model_path)
+    model = load_model(model_path, compile=False)
+
 
     # Build reverse mapping.
     index_to_word = {idx: word for word, idx in tokenizer.word_index.items()}
